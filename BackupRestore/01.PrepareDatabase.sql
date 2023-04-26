@@ -22,7 +22,7 @@ GO
 ALTER DATABASE Adventureworks SET RECOVERY FULL WITH NO_WAIT
 GO
 --Step 3 Prepare Backup Media
-IF EXISTS(SELECT * FROM sys.backup_devices WHERE [name]=N'mymyDevice')
+IF EXISTS(SELECT * FROM sys.backup_devices WHERE [name]=N'myDevice')
 	EXEC master.dbo.sp_dropdevice @logicalname = N'myDevice';
 
 EXEC master.dbo.sp_addumpdevice  @devtype = N'disk', @logicalname = N'myDevice'
