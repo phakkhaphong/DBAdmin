@@ -27,8 +27,14 @@ WITH DIFFERENTIAL,  MEDIANAME = N'My Media';
 
 BACKUP LOG [AdventureWorks] TO  [MyDevice] 
 WITH MEDIANAME = N'My Media';
+
+WAITFOR DELAY '00:00:10';
+
 BACKUP LOG [AdventureWorks] TO  [MyDevice] 
 WITH MEDIANAME = N'My Media';
+
+WAITFOR DELAY '00:00:10'
+
 BACKUP LOG [AdventureWorks] TO  [MyDevice] 
 WITH MEDIANAME = N'My Media';
 
@@ -48,6 +54,9 @@ WITH DIFFERENTIAL,  MEDIANAME = N'My Media';
 
 BACKUP LOG [AdventureWorks] TO  [MyDevice] 
 WITH MEDIANAME = N'My Media';
+
+WAITFOR DELAY '00:00:10';
+
 BACKUP LOG [AdventureWorks] TO  [MyDevice] 
 WITH MEDIANAME = N'My Media';
 
