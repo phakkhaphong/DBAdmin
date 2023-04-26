@@ -64,7 +64,7 @@ WITH MEDIANAME = N'My Media';
 USE AdventureWorks;
 UPDATE Person.Person
 SET ModifiedDate=GETDATE()
-----Crash 12:30
+----Crash Simulation 12:30
 
 /* STEP 2 
 	1. Stop Service
@@ -74,3 +74,9 @@ SET ModifiedDate=GETDATE()
  STEP 3 Restore
 
  */
+
+ --Backup Tail-Log
+ BACKUP LOG [AdventureWorks]
+ TO DISK = 'D:\Backups\Adv-Taillog.bak'
+ WITH CONTINUE_AFTER_ERROR;
+ GO
