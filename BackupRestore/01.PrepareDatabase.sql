@@ -19,10 +19,12 @@ WITH
 ,	MOVE N'AdventureWorks_Log' TO N'D:\Adv\AdventureWorks_log.ldf'
 GO
 
+ALTER DATABASE Adventureworks SET RECOVERY FULL WITH NO_WAIT
+GO
 --Step 3 Prepare Backup Media
-IF EXISTS(SELECT * FROM sys.backup_devices WHERE [name]=N'myMedia')
-	EXEC master.dbo.sp_dropdevice @logicalname = N'myMedia';
+IF EXISTS(SELECT * FROM sys.backup_devices WHERE [name]=N'mymyDevice')
+	EXEC master.dbo.sp_dropdevice @logicalname = N'myDevice';
 
-EXEC master.dbo.sp_addumpdevice  @devtype = N'disk', @logicalname = N'myMedia'
-, @physicalname = N'D:\Backups\myMedia.bak'
+EXEC master.dbo.sp_addumpdevice  @devtype = N'disk', @logicalname = N'myDevice'
+, @physicalname = N'D:\Backups\myDevice.bak'
 GO
