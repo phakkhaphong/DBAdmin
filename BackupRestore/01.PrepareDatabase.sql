@@ -20,6 +20,9 @@ WITH
 GO
 
 --Step 3 Prepare Backup Media
+IF EXISTS(SELECT * FROM sys.backup_devices WHERE [name]=N'myMedia')
+	EXEC master.dbo.sp_dropdevice @logicalname = N'myMedia';
+
 EXEC master.dbo.sp_addumpdevice  @devtype = N'disk', @logicalname = N'myMedia'
 , @physicalname = N'D:\Backups\myMedia.bak'
 GO
