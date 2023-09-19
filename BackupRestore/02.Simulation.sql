@@ -42,6 +42,8 @@ WITH MEDIANAME = N'My Media';
 USE AdventureWorks
 GO
 
+--SELECT * FROM Person.ContactType
+
 INSERT INTO Person.ContactType([Name])
 VALUES ('IT Auditor');
 
@@ -62,8 +64,12 @@ WITH MEDIANAME = N'My Media';
 
 ----Update Person.Person 12:14
 USE AdventureWorks;
+GO
+--SELECT * FROM Person.Person;
+
 UPDATE Person.Person
 SET ModifiedDate=GETDATE()
+
 ----Crash Simulation 12:30
 
 /* STEP 2 
@@ -74,9 +80,3 @@ SET ModifiedDate=GETDATE()
  STEP 3 Restore
 
  */
-
- --Backup Tail-Log
- BACKUP LOG [AdventureWorks]
- TO DISK = 'D:\Backups\Adv-Taillog.bak'
- WITH CONTINUE_AFTER_ERROR;
- GO
