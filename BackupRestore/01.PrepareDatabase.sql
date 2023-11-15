@@ -13,10 +13,10 @@ GO
 
 --Step 2 Restore AdventureWorks to D:\adv
 RESTORE DATABASE AdventureWorks
-FROM  DISK = N'D:\Setupfiles\AdventureWorks2012.bak' 
+FROM  DISK = N'D:\Setupfiles\AdventureWorks.bak' 
 WITH  
-	MOVE N'AdventureWorks2012' TO N'D:\Adv\AdventureWorks.mdf'
-,	MOVE N'AdventureWorks2012_Log' TO N'D:\Adv\AdventureWorks_log.ldf'
+	MOVE N'AdventureWorks' TO N'D:\Adv\AdventureWorks.mdf'
+,	MOVE N'AdventureWorks_Log' TO N'D:\Adv\AdventureWorks_log.ldf'
 GO
 
 ALTER DATABASE Adventureworks SET RECOVERY FULL WITH NO_WAIT
