@@ -39,9 +39,6 @@ BACKUP LOG [AdventureWorks] TO  [MyDevice]
 WITH MEDIANAME = N'My Media';
 
 --Diff Tue 22:00
-BACKUP DATABASE [AdventureWorks] TO  [MyDevice] 
-WITH DIFFERENTIAL,  MEDIANAME = N'My Media';
-
 
 USE AdventureWorks
 GO
