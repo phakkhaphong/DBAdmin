@@ -21,7 +21,10 @@ GO
 
 ALTER DATABASE Adventureworks SET RECOVERY FULL WITH NO_WAIT
 GO
---Step 3 Prepare Backup Media
+
+-- Step 3 CREATE Folder D:\backups
+
+-- Step 4 Prepare Backup Media
 IF EXISTS(SELECT * FROM sys.backup_devices WHERE [name]=N'myDevice')
 	EXEC master.dbo.sp_dropdevice @logicalname = N'myDevice';
 
