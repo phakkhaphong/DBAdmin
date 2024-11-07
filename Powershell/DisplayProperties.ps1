@@ -9,7 +9,7 @@ Set-Location \SQL\localhost\DEFAULT\Databases;
 
 #3# Get the database that we want to work with
 # This is an SMO object and we can access its properties and methods
-$databaseName = "AdventureWorks2016";
+$databaseName = "AdventureWorks";
 $database = Get-Item -Path $databaseName;
 
 #4# Display some of the database properties
