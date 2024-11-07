@@ -9,11 +9,11 @@ Set-Location \SQL\localhost\DEFAULT\Databases;
 
 #3# Get the database that we want to work with
 # This is an SMO object and so we can access its properties and methods
-$databaseName = "AdventureWorks2016";
+$databaseName = "AdventureWorks";
 $database = Get-Item -Path $databaseName;
     
 #4# Change some of the database properties
-$database.CompatibilityLevel = [Microsoft.SqlServer.Management.Smo.CompatibilityLevel]::Version120;
+$database.CompatibilityLevel = [Microsoft.SqlServer.Management.Smo.CompatibilityLevel]::Version160;
 $database.Alter();
 Write-Host "Changed database properties";
 Write-Host $database.CompatibilityLevel
